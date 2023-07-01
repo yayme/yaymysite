@@ -27,9 +27,43 @@ background-color:violet;
 .social{
     display:flex;
 }
-#resume
-{font-size:25px;
-text-decoration: underline;
-background-color:violet;
-width:90px;
-}
+
+.fireworks-link {
+    position: relative;
+    display: inline-block;
+    font-size:25px;
+
+  }
+  
+  .fireworks-link::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .fireworks-link:hover::after {
+    opacity: 1;
+    animation: fireworks 1s infinite;
+  }
+  
+  @keyframes fireworks {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
+    }
+    70% {
+      box-shadow: 0 0 0 50px rgba(255, 255, 255, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+  }
+  
